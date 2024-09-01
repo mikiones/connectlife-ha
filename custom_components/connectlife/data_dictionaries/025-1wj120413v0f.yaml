@@ -54,9 +54,13 @@ properties:
     sensor:
       device_class: enum
       options:
-        1: "off"
-        3: running
-        4: running
+        0: idle
+        1: waighting
+        3: washing
+        4: 4unknown
+        5: 5unknnow
+        6: 6unknown
+        7: 7unknown
   - property: DefaultSpinSpeed
     # Sample value: 8
   - property: DelayEndTime
@@ -270,7 +274,7 @@ properties:
     # Sample value: 0
   - property: Softener
     icon: mdi:spa
-    select:
+    sensor:
       device_class: enum
       options:
         0: "off"
@@ -485,6 +489,15 @@ properties:
   - property: hottime
     # Sample value: 0
   - property: machine_status
+    select:
+      icon: mdi:state-machine
+      device_class: enum
+      options:
+        0: "offline"
+        1: "idle"
+        2: "working"
+        3: "3Unk"
+        4: "4Unk"
     # Sample value: 0
   - property: mainwashtime
     # Sample value: 0
